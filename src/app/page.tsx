@@ -1,6 +1,8 @@
 "use client"
 import { Textarea } from "@/components/ui/textarea";
-import LiquidGlass from "liquid-glass-react";
+import { EraCard } from "@/components/shared/EraCard";
+import { Hammer, ScanEye, Smartphone } from "lucide-react";
+import img1920 from "../assets/image/1920.png"
 
 export default function Home() {
 
@@ -27,48 +29,81 @@ export default function Home() {
           </p>
         </header>
         <main>
-            <section className="mb-10 md:mb-16 max-w-2xl mx-auto flex flex-col space-y-3">
-              <div className="flex flex-wrap gap-2 py-2">
-                {predefinedTags.map((tag, index) => (
-                  <button
-                    key={index}
-                    // onClick={() => addTagToInput(tag)}
-                    className="px-3 py-1 text-xs bg-muted-foreground/90 text-background rounded-lg hover:bg-muted-foreground cursor-pointer"
-                  >
-                    {tag}
-                  </button>
-                ))}
+          <section className="mb-10 md:mb-16 max-w-2xl mx-auto flex flex-col space-y-3">
+            <div className="flex flex-wrap gap-2 py-2">
+              {predefinedTags.map((tag, index) => (
                 <button
-                  // onClick={handleClearInput}
-                  className="px-3 py-1 text-xs bg-red-600 text-white rounded-lg hover:bg-red-600/90 cursor-pointer"
+                  key={index}
+                  // onClick={() => addTagToInput(tag)}
+                  className="px-3 py-1 text-xs bg-muted-foreground/90 text-background rounded-lg hover:bg-muted-foreground cursor-pointer"
                 >
-                  clear
+                  {tag}
                 </button>
-              </div>
+              ))}
+              <button
+                // onClick={handleClearInput}
+                className="px-3 py-1 text-xs bg-red-600 text-white rounded-lg hover:bg-red-600/90 cursor-pointer"
+              >
+                clear
+              </button>
+            </div>
 
-              <div className="flex flex-col space-y-5 items-center justify-center">
-                <Textarea
-                  placeholder="Describe a piece of today's technology (e.g., 'smartphones', 'social media', 'AI assistants')..."
-                  className="min-h-[100px] text-base bg-card"
-                  aria-label="Technology query input"
-                />
-                {/*  */}
-                <button
-                  className="w-80 text-center cursor-pointer bg-gradient-to-b from-indigo-500 to-indigo-600 transition-shadow hover:shadow-[0px_4px_32px_0_rgba(99,102,241,.70)] px-6 py-3 rounded-xl border-[1px] border-none text-primary-foreground font-medium group"
+            <div className="flex flex-col space-y-5 items-center justify-center">
+              <Textarea
+                placeholder="Describe a piece of today's technology (e.g., 'smartphones', 'social media', 'AI assistants')..."
+                className="min-h-[100px] text-base bg-card"
+                aria-label="Technology query input"
+              />
+              {/*  */}
+              <button
+                className="w-80 text-center cursor-pointer bg-gradient-to-b from-indigo-500 to-indigo-600 transition-shadow hover:shadow-[0px_4px_32px_0_rgba(99,102,241,.70)] px-6 py-3 rounded-xl border-[1px] border-none text-primary-foreground font-medium group"
+              >
+                <p
+                  className=""
                 >
-                  <p
-                    className=""
-                  >
-                    🧭 Initiate Time Sync
-                  </p>
-                </button>
-              </div>
+                  🧭 Initiate Time Sync
+                </p>
+              </button>
+            </div>
+          </section>
 
-              <div>
-                
-              </div>
-            </section>
+          <div className="flex flex-wrap justify-center gap-6 mt-10">
+            <EraCard
+              title="Retroverse:"
+              subtitle="The Roaring Twenties"
+              label="Signal from 1920"
+              description="No perspective generated for this era."
+              color="text-orange-400"
+              Icon={Hammer}
+              imgPath={"/assets/image/1920.png"}
+            />
+
+            <EraCard
+              title="Nowverse:"
+              subtitle="The Digital Present"
+              label="Ping from 2025"
+              description="No perspective generated for this era."
+              color="text-cyan-400"
+              Icon={Smartphone}
+              imgPath={"/assets/image/2025.png"}
+            />
+
+            <EraCard
+              title="Futureverse:"
+              subtitle="The Quantum Horizon"
+              label="Pulse from 2125"
+              description="No perspective generated for this era."
+              color="text-fuchsia-400"
+              Icon={ScanEye}
+              imgPath={"/assets/image/2125.png"}
+            />
+          </div>
         </main>
+        <footer className="text-center mt-12 py-6 border-t border-border">
+          <p className="text-sm text-muted-foreground font-body">
+            Quantum Verse — Echoing innovation through timelines and dimensions.
+          </p>
+        </footer>
       </main >
     </>
   );
