@@ -1,4 +1,15 @@
+"use client"
+import { Textarea } from "@/components/ui/textarea";
+import LiquidGlass from "liquid-glass-react";
+
 export default function Home() {
+
+  const predefinedTags = [
+    "smartphones",
+    "social media",
+    "AI assisstants"
+  ];
+
   return (
     <>
       <main className="flex-grow container mx-auto px-4 py-8 md:px-6 md:py-12">
@@ -15,7 +26,50 @@ export default function Home() {
             Step into the Quantum Verse — Witness technology through the eyes of time
           </p>
         </header>
-      </main>
+        <main>
+            <section className="mb-10 md:mb-16 max-w-2xl mx-auto flex flex-col space-y-3">
+              <div className="flex flex-wrap gap-2 py-2">
+                {predefinedTags.map((tag, index) => (
+                  <button
+                    key={index}
+                    // onClick={() => addTagToInput(tag)}
+                    className="px-3 py-1 text-xs bg-muted-foreground/90 text-background rounded-lg hover:bg-muted-foreground cursor-pointer"
+                  >
+                    {tag}
+                  </button>
+                ))}
+                <button
+                  // onClick={handleClearInput}
+                  className="px-3 py-1 text-xs bg-red-600 text-white rounded-lg hover:bg-red-600/90 cursor-pointer"
+                >
+                  clear
+                </button>
+              </div>
+
+              <div className="flex flex-col space-y-5 items-center justify-center">
+                <Textarea
+                  placeholder="Describe a piece of today's technology (e.g., 'smartphones', 'social media', 'AI assistants')..."
+                  className="min-h-[100px] text-base bg-card"
+                  aria-label="Technology query input"
+                />
+                {/*  */}
+                <button
+                  className="w-80 text-center cursor-pointer bg-gradient-to-b from-indigo-500 to-indigo-600 transition-shadow hover:shadow-[0px_4px_32px_0_rgba(99,102,241,.70)] px-6 py-3 rounded-xl border-[1px] border-none text-primary-foreground font-medium group"
+                >
+                  <p
+                    className=""
+                  >
+                    🧭 Initiate Time Sync
+                  </p>
+                </button>
+              </div>
+
+              <div>
+                
+              </div>
+            </section>
+        </main>
+      </main >
     </>
   );
 }
