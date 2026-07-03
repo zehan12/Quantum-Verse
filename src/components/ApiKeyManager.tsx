@@ -77,12 +77,14 @@ export function APIKeyManager() {
                                 >GOOGLE AI STUDIO</a>
                             </p>
                             <Input
+                                aria-label="API Key Description"
                                 placeholder="> ENTER_ALIAS_DESCRIPTION"
                                 value={newDesc}
                                 onChange={(e) => setNewDesc(e.target.value)}
                                 className="bg-[#050505] border-2 border-[#333] focus-visible:ring-0 focus-visible:border-[#00E5FF] rounded-sm font-mono text-[#00E5FF] placeholder-[#555] rounded-none"
                             />
                             <Input
+                                aria-label="Gemini API Key"
                                 placeholder="> PASTE_GEMINI_API_KEY"
                                 value={newKey}
                                 onChange={(e) => setNewKey(e.target.value)}
@@ -121,14 +123,14 @@ export function APIKeyManager() {
                             </div>
 
                             <div className="flex items-center gap-1 ml-4 shrink-0">
-                                <Button size="icon" variant="ghost" onClick={() => setShowKey(!showKey)} className="text-[#00E5FF] hover:bg-[#00E5FF]/20 hover:text-[#00E5FF] rounded-sm">
-                                    {showKey ? <EyeOff size={16} /> : <Eye size={16} />}
+                                <Button aria-label={showKey ? "Hide API Key" : "Show API Key"} size="icon" variant="ghost" onClick={() => setShowKey(!showKey)} className="text-[#00E5FF] hover:bg-[#00E5FF]/20 hover:text-[#00E5FF] rounded-sm">
+                                    {showKey ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
                                 </Button>
-                                <Button size="icon" variant="ghost" onClick={() => navigator.clipboard.writeText(apiKey)} className="text-[#00E5FF] hover:bg-[#00E5FF]/20 hover:text-[#00E5FF] rounded-sm">
-                                    <Copy size={16} />
+                                <Button aria-label="Copy API Key" size="icon" variant="ghost" onClick={() => navigator.clipboard.writeText(apiKey)} className="text-[#00E5FF] hover:bg-[#00E5FF]/20 hover:text-[#00E5FF] rounded-sm">
+                                    <Copy size={16} aria-hidden="true" />
                                 </Button>
-                                <Button size="icon" variant="ghost" onClick={handleClear} className="text-[#FF0055] hover:bg-[#FF0055]/20 hover:text-[#FF0055] rounded-sm">
-                                    <Trash2 size={16} />
+                                <Button aria-label="Delete API Key" size="icon" variant="ghost" onClick={handleClear} className="text-[#FF0055] hover:bg-[#FF0055]/20 hover:text-[#FF0055] rounded-sm">
+                                    <Trash2 size={16} aria-hidden="true" />
                                 </Button>
                             </div>
                         </div>

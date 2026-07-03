@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="container mx-auto px-4 py-4 flex flex-col min-h-[calc(100vh-80px)]">
+      <div className="container mx-auto px-4 py-4 flex flex-col flex-grow">
         <div className="flex-grow flex flex-col justify-center shrink-0 py-2">
           <header className="text-center mb-6">
             <div className="inline-flex items-center gap-4 mb-4">
@@ -69,6 +69,7 @@ export default function Home() {
                 <button
                   key={index}
                   onClick={() => setPrompt(tag)}
+                  aria-label={`Select predefined technology: ${tag}`}
                   className="px-4 py-2 text-sm font-bold uppercase bg-[#1A1A1A] text-[#E0E0E0] border border-[#333] hover:border-[#00E5FF] hover:text-[#00E5FF] transition-colors rounded-sm"
                 >
                   [{tag}]
@@ -79,6 +80,7 @@ export default function Home() {
                   setPrompt("");
                   setError("");
                 }}
+                aria-label="Clear input"
                 className="px-4 py-2 text-sm font-bold uppercase bg-[#1A1A1A] text-[#FF0055] border border-[#333] hover:border-[#FF0055] transition-colors rounded-sm"
               >
                 [CLEAR]
@@ -98,8 +100,12 @@ export default function Home() {
               />
 
               {error && (
-                <div className="bg-[#FF0055]/10 border-l-4 border-[#FF0055] px-4 py-3 text-[#FF0055] text-sm font-mono w-full mt-4 flex items-center gap-2">
-                  <span className="animate-pulse">⚠</span> {error}
+                <div 
+                  className="bg-[#FF0055]/10 border-l-4 border-[#FF0055] px-4 py-3 text-[#FF0055] text-sm font-mono w-full mt-4 flex items-center gap-2"
+                  role="alert"
+                  aria-live="assertive"
+                >
+                  <span className="animate-pulse" aria-hidden="true">⚠</span> {error}
                 </div>
               )}
             </div>
@@ -126,11 +132,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-        <footer className="py-4 border-t-2 border-[#1A1A1A] mt-auto shrink-0 flex justify-between items-center text-xs text-[#555] font-mono">
-          <p>SYS.VER 1.0.4</p>
-          <p>QUANTUM_VERSE // CONNECTED</p>
-        </footer>
-      </main>
+      </div>
     </>
   );
 }

@@ -190,7 +190,7 @@ function TimelineContent() {
 
 export default function TimelinesPage() {
   return (
-    <main className="container mx-auto px-4 py-4 min-h-[calc(100vh-80px)] flex flex-col justify-center w-full">
+    <div className="container mx-auto px-4 py-4 flex-grow flex flex-col justify-center w-full">
       <Suspense fallback={
         <div className="flex justify-center items-center min-h-[60vh]">
           <div className="w-12 h-12 bg-[#00E5FF] animate-ping"></div>
@@ -198,6 +198,6 @@ export default function TimelinesPage() {
       }>
         <TimelineContent />
       </Suspense>
-    </main>
+    </div>
   );
 }

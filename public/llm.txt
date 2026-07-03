@@ -1,0 +1,27 @@
+# Quantum Verse
+
+> A brutalist interface for navigating alternate histories and future speculative timelines using AI.
+
+## Overview
+Quantum Verse is a Next.js application designed to simulate a "Temporal Exploration Terminal." It takes user input about speculative technological points of divergence (e.g., "What if Rome never fell and industrialized?") and generates highly structured timeline cards mapping out that alternate reality using the Gemini AI model.
+
+## Technology Stack
+- Framework: Next.js 15+ (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS (v4)
+- UI Components: Shadcn UI, Radix UI
+- Generative AI: Google Generative AI (Gemini 1.5 Flash)
+
+## Design System (Brutalist)
+- Primary Background: #050505
+- Primary Accent: #00E5FF (Cyan)
+- Borders: #1A1A1A
+- Typography: Space Grotesk (headings), JetBrains Mono (monospaced content)
+- Accents: Sharp square borders (rounded-sm), stark block drop shadows (e.g. shadow-[4px_4px_0_#00E5FF]), and uppercase technical text.
+
+## API Keys
+The application strictly enforces that users provide their own Gemini API key via the `ApiKeyManager` component, which persists the key securely in local `localStorage`.
+
+## Navigation & Routing
+- `/` : The main terminal console where users input their timeline search.
+- `/timelines` : The generated result view where chronological Era Cards are displayed.
