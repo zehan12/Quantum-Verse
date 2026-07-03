@@ -5,6 +5,8 @@
 
 @theme inline {
   --font-inter: var(--font-inter);
+  --font-space: var(--font-space);
+  --font-mono: var(--font-mono);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
