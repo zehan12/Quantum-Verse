@@ -47,9 +47,9 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="container mx-auto px-4 py-6 border-t-2 border-[#1A1A1A] mt-auto shrink-0 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#555] font-mono">
-            <p>SYS.VER 1.0.4 // BY <a href="https://github.com/Zehan12" target="_blank" rel="noopener noreferrer" className="text-[#00E5FF] hover:underline" aria-label="Author GitHub Profile">ZEHAN KHAN</a></p>
+            <p>SYS.VER 1.0.4 // BY <a href="https://zehankhan.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#00E5FF] hover:underline" aria-label="Author Profile">ZEHAN KHAN</a></p>
             <div className="flex gap-4">
-              <a href="https://github.com/Quantum-Verse" target="_blank" rel="noopener noreferrer" className="hover:text-[#00E5FF] transition-colors" aria-label="GitHub Repository">GITHUB</a>
+              <a href="https://github.com/zehan12/Quantum-Verse" target="_blank" rel="noopener noreferrer" className="hover:text-[#00E5FF] transition-colors" aria-label="GitHub Repository">GITHUB</a>
               <span>{"//"}</span>
               <a href="/llm.txt" className="hover:text-[#00E5FF] transition-colors" aria-label="LLM Text Document">LLM.TXT</a>
             </div>
